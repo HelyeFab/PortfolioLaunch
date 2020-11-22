@@ -437,14 +437,16 @@ textarea {
   .homeMenu {
     opacity: 0;
     display: inline-block;
-    background-color: transparent;
+    background-color: #EDEDED;
     box-shadow: none;
     border-radius: none;
     height: auto;
     width: auto;
     position: fixed;
+    box-shadow: -3px -3px 7px #cfcfcf73,
+    3px 3px 5px rgba(94, 104, 121, 0.377);
     top: 6rem;
-    left: 40%; } }
+    left: 36%; } }
   @media (max-width: 56.25em) and (max-width: 37.5em) {
     .homeMenu {
       top: 6rem;
@@ -466,7 +468,7 @@ textarea {
     align-items: center;
     height: auto;
     width: auto;
-    background-color: transparent;
+    background-color: #EDEDED;
     padding: 4rem;
     border-radius: 3rem;
     position: fixed;
