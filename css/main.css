@@ -421,7 +421,6 @@ textarea {
     height: 100vh;
     width: 100vw;
     z-index: 1000;
-    background-color: rgba(188, 189, 188, 0.973);
     padding: 3rem;
     display: flex;
     flex-direction: column;
