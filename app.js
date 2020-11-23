@@ -51,6 +51,8 @@ const mark = document.querySelectorAll('.highlight');
 const svgColor = document.querySelectorAll('.colorCustom');
 const btnColor = document.querySelectorAll('.themeColor');
 const themeToggler = document.getElementById('theme');
+const homeMenu = document.querySelector('.homeMenu');
+ const themeMenu = document.querySelector('.themeMenu');
 
 
 
@@ -58,16 +60,31 @@ const themeToggler = document.getElementById('theme');
 // EventListeners
 // ! Activating the Home Menu 
 homeBtn.addEventListener('click', () => {
-    const homeMenu = document.querySelector('.homeMenu');
     homeMenu.classList.toggle('active');
-
 });
+
+window.addEventListener('mouseup', function (e) {
+    if (homeMenu.classList.contains('active')) {
+        homeMenu.classList.remove('active');
+    }
+   
+})
+
+
+
+
 // ! Activating the Settings Menu 
 themeBtn.addEventListener('click', () => {
-    const themeMenu = document.querySelector('.themeMenu');
     themeMenu.classList.toggle('active');
 
 });
+
+window.addEventListener('mouseup', function (e) {
+    if (themeMenu.classList.contains('active')) {
+        themeMenu.classList.remove('active');
+    }
+
+})
 
 const removeCurrentColor = (el) => {
     const colors = ['yellow','violet','orange', 'darkPink', 'purple'];

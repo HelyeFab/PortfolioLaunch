@@ -33,7 +33,7 @@ $msg .= "User come from : ".$_SERVER["SERVER_NAME"]."\r\n";
 // $msg .= "Template Name : FOXEVCARD";
 
 $recipient = "emmanuelfabiani23@gmail.com";// Change the recipient email adress to your adrees  
-$sujet =  "Sender information";
+$subject =  "Sender information";
 $mailheaders = "From: $email\r\nReply-To: $email\r\nReturn-Path: $email\r\n";
 
 if (!$error){

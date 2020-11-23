@@ -55,6 +55,7 @@ a {
   background-image: linear-gradient(120deg, #12a4d0 0, #883aac 40%); }
 
 .btn {
+  cursor: pointer;
   margin: 3rem 0;
   max-width: 20rem;
   padding: 1.6rem 2rem;
@@ -90,6 +91,7 @@ a {
     color: #416D4E; }
 
 .homeMenuBtn {
+  cursor: pointer;
   margin-top: 4rem;
   grid-area: btn1;
   position: fixed;
@@ -98,6 +100,7 @@ a {
   min-width: 5rem; }
 
 .themeMenuBtn {
+  cursor: pointer;
   margin-top: 4rem;
   grid-area: btn2;
   position: fixed;
@@ -262,7 +265,7 @@ a {
     margin-bottom: 4rem;
     height: 13rem;
     width: 13rem;
-    background: url("/public/css/assets/img/Emma.png") no-repeat center center/cover;
+    background: url("/css/assets/img/Emma.png") no-repeat center center/cover;
     border-radius: 50%;
     border: 3px solid rgba(226, 224, 224, 0.933);
     box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); }
@@ -308,9 +311,9 @@ textarea {
   grid-template-areas: 'btn1 menu1 . menu2 btn2'; }
 
 .homeMenu {
+  display: none;
   position: fixed;
   left: 16rem;
-  opacity: 0;
   grid-area: menu1;
   justify-self: self-start;
   height: 22rem;
@@ -319,8 +322,7 @@ textarea {
   background-color: #ededed;
   border-radius: 3rem;
   z-index: 1400;
-  box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377);
-  transition: opacity .7s ease-in-out; }
+  box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); }
   .homeMenu ul li {
     list-style: none;
     text-align: center; }
@@ -335,9 +337,9 @@ textarea {
         color: #073c5f; }
 
 .themeMenu {
+  display: none;
   position: fixed;
   right: 16rem;
-  opacity: 0;
   grid-area: menu2;
   height: 22rem;
   width: 22rem;
@@ -389,6 +391,14 @@ textarea {
         color: #edd83d;
         border-radius: 50%; }
 
+.homeMenu.active {
+  display: inline;
+  z-index: 1000; }
+
+.themeMenu.active {
+  display: inline;
+  z-index: 1000; }
+
 .fa-cog {
   animation: cog-spin infinite 5s linear;
   animation-duration: 5s;
@@ -407,28 +417,7 @@ textarea {
   100% {
     transform: rotate(360deg); } }
 
-.homeMenu.active {
-  display: inline;
-  opacity: 100; }
-
-.themeMenu.active {
-  display: inline;
-  opacity: 100;
-  z-index: 1000; }
-
 @media (max-width: 56.25em) {
-  .navBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 1000;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
   .homeMenuBtn {
     position: fixed;
     top: 3rem;
@@ -437,13 +426,7 @@ textarea {
     position: fixed;
     top: 3rem;
     right: 4rem; }
-  .homeMenu {
-    display: none;
-    opacity: 0;
-    display: inline-block;
-    background-color: transparent;
-    box-shadow: none;
-    border-radius: none;
+  .homeMenu.active {
     height: auto;
     width: auto;
     padding: 4rem;
@@ -452,30 +435,28 @@ textarea {
     position: fixed;
     top: 6rem;
     box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); } }
-  @media screen and (max-width: 56.25em) and (max-width: 556px) {
-    .homeMenu {
+  @media screen and (max-width: 56.25em) and (max-width: 558px) {
+    .homeMenu.active {
       left: 36%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 518px) {
+    .homeMenu.active {
+      left: 34%; } }
 
 @media (max-width: 56.25em) {
-    .homeMenu ul {
+    .homeMenu.active ul {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-content: center; }
-      .homeMenu ul li:not(:last-child) {
+      .homeMenu.active ul li:not(:last-child) {
         margin-bottom: 2rem; }
-        .homeMenu ul li:not(:last-child) a {
+        .homeMenu.active ul li:not(:last-child) a {
           font-size: 2rem;
           transition: all .4s ease-in-out; }
-          .homeMenu ul li:not(:last-child) a:hover {
+          .homeMenu.active ul li:not(:last-child) a:hover {
             font-size: 2.4rem;
             color: #073c5f; }
-  .themeMenu {
-    display: none;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .themeMenu.active {
     height: auto;
     width: auto;
     background-color: #EDEDED;
@@ -484,25 +465,33 @@ textarea {
     position: fixed;
     top: 6rem;
     z-index: 1200; } }
-  @media screen and (max-width: 56.25em) and (max-width: 556px) {
-    .themeMenu {
-      top: 35%;
-      right: 36%; } }
-  @media screen and (max-width: 56.25em) and (max-width: 480px) {
-    .themeMenu {
-      top: 35%;
+  @media screen and (max-width: 56.25em) and (max-width: 558px) {
+    .themeMenu.active {
+      top: 40%;
+      right: 38%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 482px) {
+    .themeMenu.active {
+      top: 45%;
+      right: 34%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 414px) {
+    .themeMenu.active {
+      top: 40%;
       right: 30%; } }
   @media screen and (max-width: 56.25em) and (max-width: 400px) {
-    .themeMenu {
-      top: 35%;
-      right: 36%; } }
+    .themeMenu.active {
+      top: 36%;
+      right: 38%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 375px) {
+    .themeMenu.active {
+      top: 30%;
+      right: 37%; } }
   @media screen and (max-width: 56.25em) and (max-width: 360px) {
-    .themeMenu {
-      top: 35%;
-      right: 32%; } }
+    .themeMenu.active {
+      top: 36%;
+      right: 36%; } }
 
 @media (max-width: 56.25em) {
-    .themeMenu span {
+    .themeMenu.active span {
       margin: 4rem 0;
       font-size: 2rem;
       font-weight: 400; } }
@@ -582,7 +571,7 @@ textarea {
   grid-area: content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center; }
   .content__text-title {
     font-size: 5rem;
@@ -604,7 +593,8 @@ textarea {
   margin-bottom: 1.6rem; }
 
 .content__text-subtitle {
-  margin-right: 5rem; }
+  margin-right: 5rem;
+  text-align: justify; }
 
 .about__me-skills-title {
   font-size: 3rem;
