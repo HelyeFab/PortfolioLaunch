@@ -262,7 +262,7 @@ a {
     margin-bottom: 4rem;
     height: 13rem;
     width: 13rem;
-    background: url("/css/assets/img/Emma.png") no-repeat center center/cover;
+    background: url("/public/css/assets/img/Emma.png") no-repeat center center/cover;
     border-radius: 50%;
     border: 3px solid rgba(226, 224, 224, 0.933);
     box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); }
@@ -408,9 +408,11 @@ textarea {
     transform: rotate(360deg); } }
 
 .homeMenu.active {
+  display: inline;
   opacity: 100; }
 
 .themeMenu.active {
+  display: inline;
   opacity: 100;
   z-index: 1000; }
 
@@ -436,6 +438,7 @@ textarea {
     top: 3rem;
     right: 4rem; }
   .homeMenu {
+    display: none;
     opacity: 0;
     display: inline-block;
     background-color: transparent;
@@ -468,6 +471,7 @@ textarea {
             font-size: 2.4rem;
             color: #073c5f; }
   .themeMenu {
+    display: none;
     opacity: 0;
     display: flex;
     flex-direction: column;
