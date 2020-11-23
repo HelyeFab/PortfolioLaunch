@@ -262,7 +262,7 @@ a {
     margin-bottom: 4rem;
     height: 13rem;
     width: 13rem;
-    background: url("/css/assets/img/Emma.png") no-repeat center center/cover;
+    background: url("/public/css/assets/img/Emma.png") no-repeat center center/cover;
     border-radius: 50%;
     border: 3px solid rgba(226, 224, 224, 0.933);
     box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); }
@@ -318,6 +318,7 @@ textarea {
   padding: 2rem;
   background-color: #ededed;
   border-radius: 3rem;
+  z-index: 1400;
   box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377);
   transition: opacity .7s ease-in-out; }
   .homeMenu ul li {
@@ -437,30 +438,35 @@ textarea {
   .homeMenu {
     opacity: 0;
     display: inline-block;
-    background-color: #EDEDED;
+    background-color: transparent;
     box-shadow: none;
     border-radius: none;
     height: auto;
     width: auto;
+    padding: 4rem;
+    background-color: #EDEDED;
+    z-index: 1600;
     position: fixed;
-    box-shadow: -3px -3px 7px #cfcfcf73,
-    3px 3px 5px rgba(94, 104, 121, 0.377);
     top: 6rem;
-    left: 36%; } }
-  @media (max-width: 56.25em) and (max-width: 37.5em) {
+    box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); } }
+  @media screen and (max-width: 56.25em) and (max-width: 556px) {
     .homeMenu {
-      top: 6rem;
-      left: 30%; } }
+      left: 36%; } }
 
 @media (max-width: 56.25em) {
-    .homeMenu ul li {
-      margin-bottom: 4rem; }
-      .homeMenu ul li a {
-        font-size: 4rem;
-        transition: all .4s ease-in-out; }
-        .homeMenu ul li a:hover {
-          font-size: 2.4rem;
-          color: #073c5f; }
+    .homeMenu ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center; }
+      .homeMenu ul li:not(:last-child) {
+        margin-bottom: 2rem; }
+        .homeMenu ul li:not(:last-child) a {
+          font-size: 2rem;
+          transition: all .4s ease-in-out; }
+          .homeMenu ul li:not(:last-child) a:hover {
+            font-size: 2.4rem;
+            color: #073c5f; }
   .themeMenu {
     opacity: 0;
     display: flex;
@@ -469,17 +475,27 @@ textarea {
     height: auto;
     width: auto;
     background-color: #EDEDED;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 3rem;
     position: fixed;
-    top: 50%;
-    right: 40%;
-    z-index: 1000;
-    box-shadow: -3px -3px 7px #cfcfcf73, 3px 3px 5px rgba(94, 104, 121, 0.377); } }
-  @media (max-width: 56.25em) and (max-width: 37.5em) {
+    top: 6rem;
+    z-index: 1200; } }
+  @media screen and (max-width: 56.25em) and (max-width: 556px) {
     .themeMenu {
-      top: 50%;
+      top: 35%;
+      right: 36%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 480px) {
+    .themeMenu {
+      top: 35%;
       right: 30%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 400px) {
+    .themeMenu {
+      top: 35%;
+      right: 36%; } }
+  @media screen and (max-width: 56.25em) and (max-width: 360px) {
+    .themeMenu {
+      top: 35%;
+      right: 32%; } }
 
 @media (max-width: 56.25em) {
     .themeMenu span {
@@ -562,15 +578,18 @@ textarea {
   grid-area: content;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center; }
   .content__text-title {
     font-size: 5rem;
     font-weight: 200;
-    text-align: center; }
+    text-align: center;
+    align-self: center; }
   .content__text-subtitle {
+    margin-top: 4rem;
     font-size: 3rem;
-    text-align: center; }
+    text-align: center;
+    align-self: center; }
 
 .hero-btn.btn a {
   font-size: 2rem;
