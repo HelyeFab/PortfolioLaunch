@@ -172,3 +172,10 @@ themeToggler.addEventListener('click', () => {
 document.querySelector('.fa-times-circle').addEventListener('click', () => {
     messagePopup[0].style.display = 'none';
 })
+
+
+//! PHP Message
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
+

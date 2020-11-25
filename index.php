@@ -1,3 +1,5 @@
+<?php include 'sendEmail.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -535,20 +537,22 @@
                     <h3> Have something <br> in <mark class="highlight"><span>Mind?...</span>
                         </mark> <br> Contact me</h3>
                 </div>
-                <form class="form" action="/send.php" method="post">
-                    <div class="form__image"></div>
-                    <input class="form__field name type=" text" name='name' placeholder="Your Name">
-                    <input class="form__field email" type="text" name='email' placeholder="Your Email">
-                    <input class="form__field company type=" text" name='company' placeholder="Company">
-                    <input class="form__field subject" type="text" name='subject' placeholder="Subject">
-                    <textarea class="form__field message" name="message" name='message' placeholder="">
-                    </textarea>
-                    <button class="hero-btn btn themeColor send_btn" type="submit"> Send Email</button>
-                </form>
-                <div class="sentMessage<?php echo $sending ? 'active' : '' ?>">
+
+    <div class="contact-form">
+        
+        <form class="form" action="" method="post">
+        <div class="form__image"></div>
+          <input type="text" name="name" class="form__field" placeholder="Your Name" required>
+          <input type="email" name="email" class="form__field" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="submit" name="submit" class="hero-btn btn themeColor send_btn" value="Send">
+        </form>
+      </div>
+                <?php echo $alert ?>
+                <!-- <div class="sentMessage active">
                     <i class="far fa-times-circle"></i>
                     <p>Thank you! Your message has been successfully sent.</p>
-                </div>
+                </div> -->
             </div>
             <div class="content__visual">
                 <svg id="b9c085e1-b209-40d5-b9c5-2decca8817ec" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
@@ -846,6 +850,8 @@
     </section>
     <!-- CONTACT section end -->
     <script src="/app.js"></script>
+ 
+    
 </body>
 
 </html>
