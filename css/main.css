@@ -384,7 +384,7 @@ textarea {
 }
 
 .sentMessage {
-  display: block;
+  display: none;
   margin-bottom: .6rem;
   background-color: #00bfa6;
   border: 2px solid #e6e3e3;

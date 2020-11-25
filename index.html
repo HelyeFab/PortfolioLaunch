@@ -545,7 +545,7 @@
                     </textarea>
                     <button class="hero-btn btn themeColor send_btn" type="submit"> Send Email</button>
                 </form>
-                <div class="sentMessage">
+                <div class="sentMessage <?php echo $sending ? 'active' : '' ?>">
                     <i class="far fa-times-circle"></i>
                     <p>Thank you! Your message has been successfully sent.</p>
                 </div>
