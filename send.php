@@ -41,8 +41,9 @@ if (!$error){
 		$sending = mail($recipient, $subject, $msg, $mailheaders); 
 		
 		if ($sending) {
-				// If the message is sent we output a string to use it 
-				echo "SENDING"; 
+        // If the message is sent we output a string to use it 
+        echo "<div class="sentMessage">";
+				// echo "SENDING"; 
 			} else {
 				// Display Error Message
 				echo $errorMessage; 
