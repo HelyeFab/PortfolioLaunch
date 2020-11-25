@@ -52,7 +52,8 @@ const svgColor = document.querySelectorAll('.colorCustom');
 const btnColor = document.querySelectorAll('.themeColor');
 const themeToggler = document.getElementById('theme');
 const homeMenu = document.querySelector('.homeMenu');
- const themeMenu = document.querySelector('.themeMenu');
+const themeMenu = document.querySelector('.themeMenu');
+const messagePopup = document.querySelectorAll('.sentMessage');
 
 
 
@@ -115,7 +116,11 @@ colorOption.forEach((el => {
         let iconBar = document.querySelectorAll('.icon');
         iconBar.forEach((el) => {
             el.style.color = pickedColor;
-       })
+        })
+        
+        
+         messagePopup[0].style.backgroundColor = pickedColor;
+         
 
 
     })
@@ -161,4 +166,9 @@ themeToggler.addEventListener('click', () => {
 
     
 
+})
+
+// ! Closing the popupMessage
+document.querySelector('.fa-times-circle').addEventListener('click', () => {
+    messagePopup[0].style.display = 'none';
 })
